@@ -10,4 +10,8 @@ public:
   Buffer(const char *text) { data = new char(strlen(text) + 1); };
 };
 
-int main() { return 0; }
+int main() {
+  Buffer a("Hello");
+  Buffer b = a;
+  b.print();
+}
