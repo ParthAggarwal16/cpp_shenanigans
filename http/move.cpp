@@ -8,6 +8,7 @@ private:
 
 public:
   Buffer(const char *text) { data = new char(strlen(text) + 1); };
+  void print() { std::cout << data << "\n"; }
 };
 
 int main() {
