@@ -8,6 +8,12 @@ private:
 
 public:
   Buffer(const char *text) { data = new char(strlen(text) + 1); };
+
+  ~Buffer() {
+    delete[] data;
+    std::cout << "Destructor\n";
+  }
+
   void print() { std::cout << data << "\n"; }
 };
 
