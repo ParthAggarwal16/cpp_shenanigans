@@ -8,17 +8,22 @@ private:
               // char object
 
 public:
-  std::string name;
-  int timeout_len;
-  Buffer() {
-    timeout_len = 10;
-    name = "whatever";
-    // int *ptr = &node[prev]
-    cout << "default contructor created" << endl;
+  Buffer(const char *text) {
+    data = new char[strlen(text) + 1];
+    strcpy(data, text);
+    std::cout << "Constructor\n";
   }
+  ~Buffer() {
+    delete[] data;
+    std::cout << "Destructor\n";
+  }
+
+  void print() { std::cout << data << '\n'; }
 };
 
 int main() {
-  Buffer buffer;
-  std::cout << buffer.name << endl;
+  Buffer a("Hello");
+  Buffer b = a;
+  b.print();
+  a.print();
 }
