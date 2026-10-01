@@ -2,13 +2,13 @@
 #include <iostream>
 using namespace std;
 
-class Account {
-public:
-  int balance;
-  std::string name;
-};
+class Buffer {
+private:
+  char *data; // data is a pointer to an address of a character
 
-int main() {
-  Account a;
-  cout << a.balance << endl;
-}
+public:
+  Buffer(const char *text) {
+    data = new char(strlen(text) + 1); // borrow memory big enough for the text
+    strcpy(data, text);                // copy the text into it
+  }
+};
