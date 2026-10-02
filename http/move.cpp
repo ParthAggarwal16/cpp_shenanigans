@@ -16,6 +16,13 @@ public:
     delete[] data; // just a normal destructor, just deletes the memory
   }
   void print() { cout << data << "\n"; }
+  void printAddress() {
+    cout << static_cast<void *>(data) << endl;
+    // static case void tells cpp to treat data as a generic pointer
+    // if we just did normal cout << data; it would have printed "hello", not
+    // its address static_cast tells the complier to covert this value into
+    // another compatible type so we are converting char * into void *
+  };
 };
 
 int main() {
