@@ -1,5 +1,6 @@
 #include <cstring>
 #include <iostream>
+#include <utility>
 using namespace std;
 
 class Buffer {
@@ -39,9 +40,9 @@ public:
 };
 
 int main() {
-  Buffer a("hello"); // the constructor runs and prints the line 12
-  Buffer b = a; // b is a branhd new obect so some constructor must run, its
-                // gonna be the copy
+  Buffer a("hello");       // the constructor runs and prints the line 12
+  Buffer b = std::move(a); // b is a branhd new obect so some constructor must
+                           // run, its gonna be the copy
   // constuctor, even though we didnt write it, the complier writes one for us,
   a.printAddress();
   b.printAddress();
