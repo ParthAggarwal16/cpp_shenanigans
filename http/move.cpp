@@ -30,10 +30,9 @@ int main() {
   Buffer b = a; // b is a branhd new obect so some constructor must run, its
                 // gonna be the copy
   // constuctor, even though we didnt write it, the complier writes one for us,
-  b.print();
-  a.print();
-  // both objects point to the same memory, this is called shallow copy, thats
-  // why only one constructor gets printed, the one by complier doesnt print
-  // anything then both the destructors run, first the memory is freed and the
-  // when we try to delet it again, the memory is already gone,
+  a.printAddress();
+  b.printAddress();
+  // these two print out same memory
+  // what we actually want is two variables both printing hello but printing
+  // out different memory
 };
