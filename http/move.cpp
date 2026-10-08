@@ -19,6 +19,12 @@ public:
     std::cout << "Copy constructor\n";
   }
 
+  Buffer(Buffer &&other) {
+    data = other.data;
+    other.data = nullptr;
+    std::cout << "Move constructor\n";
+  }
+
   ~Buffer() {
     delete[] data; // just a normal destructor, just deletes the memory
   }
