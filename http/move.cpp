@@ -16,6 +16,13 @@ public:
   ~Buffer() {
     delete[] data; // just a normal destructor, just deletes the memory
   }
+
+  Buffer(const Buffer &other) {
+    data = new char[strlen(other.data) + 1];
+    strcpy(data, other.data);
+    std::cout << "copy constructor";
+  };
+
   void print() { cout << data << "\n"; }
   void printAddress() {
     cout << static_cast<void *>(data) << endl;
