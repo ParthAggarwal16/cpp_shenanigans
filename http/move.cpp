@@ -36,7 +36,7 @@ public:
 int main() {
 
   Buffer a("hello");
-  Buffer b = std::move(a);
+  Buffer b = a;
   a.print();
   b.print();
   a.printAddress();
