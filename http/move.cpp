@@ -24,11 +24,12 @@ public:
     std::cout << "copy constructor";
   };
 
-  Buffer(Buffer &&other) noexcept {
-    data = other.data;
-    other.data = nullptr;
-    std::cout << "move constructor";
-  }
+  // will look at it again, and try and implement it again
+  // Buffer(Buffer &&other) noexcept {
+  //   data = other.data;
+  //   other.data = nullptr;
+  //   std::cout << "move constructor";
+  // }
 
   void print() { cout << data << "\n"; }
   void printAddress() {
