@@ -1,3 +1,4 @@
+#include <cstddef>
 #include <cstring>
 #include <iostream>
 #include <utility>
@@ -22,6 +23,12 @@ public:
     strcpy(data, other.data);
     std::cout << "copy constructor";
   };
+
+  Buffer(Buffer &&other) noexcept {
+    data = other.data;
+    other.data = nullptr;
+    std::cout << "move constructor";
+  }
 
   void print() { cout << data << "\n"; }
   void printAddress() {
