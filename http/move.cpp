@@ -41,10 +41,13 @@ public:
   };
 };
 
-Buffer createBuffer() { // this returns buffer by value
-  Buffer temp("hello there from the heap!!");
-  return temp;
-}
+// TODO: have a look back at return by value and move constructor and implement
+// them again
+
+// Buffer createBuffer() { // this returns buffer by value
+//   Buffer temp("hello there from the heap!!");
+//   return temp;
+// }
 
 int main() {
 
@@ -55,8 +58,8 @@ int main() {
   a.printAddress();
   b.printAddress();
 
-  // testing return by value
-  Buffer c = createBuffer();
-  cout << "c";
-  c.print();
+  // // testing return by value
+  // Buffer c = createBuffer();
+  // cout << "c";
+  // c.print();
 };
