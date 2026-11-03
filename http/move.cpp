@@ -31,6 +31,11 @@ public:
   //   std::cout << "move constructor";
   // }
 
+  Buffer createBuffer() { // this returns buffer by value
+    Buffer temp("hello there from the heap!!");
+    return temp;
+  }
+
   void print() { cout << data << "\n"; }
   void printAddress() {
     cout << static_cast<void *>(data) << endl;
