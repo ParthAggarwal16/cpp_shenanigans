@@ -24,7 +24,6 @@ public:
     std::cout << "copy constructor";
   };
 
-  // will look at it again, and try and implement it again
   Buffer(Buffer &&other) noexcept {
     data = other.data;
     other.data = nullptr;
