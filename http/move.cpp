@@ -44,10 +44,10 @@ public:
 // them again
 // UPDATE: move constructor implemented again, ravlue remians
 
-// Buffer createBuffer() { // this returns buffer by value
-//   Buffer temp("hello there from the heap!!");
-//   return temp;
-// }
+Buffer createBuffer() { // this returns buffer by value
+  Buffer temp("hello there from the heap!!");
+  return temp;
+}
 
 int main() {
 
@@ -58,8 +58,8 @@ int main() {
   a.printAddress();
   b.printAddress();
 
-  // // testing return by value
-  // Buffer c = createBuffer();
-  // cout << "c";
-  // c.print();
+  // testing return by value
+  Buffer c = createBuffer();
+  cout << "c";
+  c.print();
 };
