@@ -1,8 +1,6 @@
 #include <cstddef>
 #include <cstring>
 #include <iostream>
-#include <iterator>
-#include <utility>
 using namespace std;
 
 class Buffer {
@@ -67,28 +65,29 @@ Buffer createBuffer() { // this returns buffer by value
 
 int main() {
 
-  Buffer a("hello");
-  Buffer b("hello");
+  // Buffer a("hello");
+  // Buffer b("hello");
+  //
+  // std::cout << "before assignment";
+  // a.print();
+  // b.print();
+  //
+  // std::cout << "assigning a to b";
+  // b = a;
+  //
+  // std::cout << " after assignment";
+  // a.print();
+  // b.print();
+  //
+  // std::cout << "checking independent memory";
+  // a.printAddress();
+  // b.printAddress();
+  //
+  // std::cout << "testing self assignment";
+  // a = a;
+  //
+  // std::cout << "printing out everything final time";
+  // a.print();
+  // b.print();
 
-  std::cout << "before assignment";
-  a.print();
-  b.print();
-
-  std::cout << "assigning a to b";
-  b = a;
-
-  std::cout << " after assignment";
-  a.print();
-  b.print();
-
-  std::cout << "checking independent memory";
-  a.printAddress();
-  b.printAddress();
-
-  std::cout << "testing self assignment";
-  a = a;
-
-  std::cout << "printing out everything final time";
-  a.print();
-  b.print();
 };
