@@ -31,22 +31,24 @@ public:
     std::cout << "move constructor";
   }
 
-  // first attempt at writing copy assignment
-  Buffer &operator=(const Buffer &other) {
-    std::cout << "my first attempt at a copy assignment";
-    if (this == &other) {
-      return *this;
-    }
+  // TODO: look back at this copy assignment and implement it again
 
-    delete[] data;
-    if (other.data == nullptr) {
-      data = nullptr;
-    } else {
-      data = new char[strlen(other.data) + 1];
-      strcpy(data, other.data);
-    }
-    return *this;
-  }
+  // // first attempt at writing copy assignment
+  // Buffer &operator=(const Buffer &other) {
+  //   std::cout << "my first attempt at a copy assignment";
+  //   if (this == &other) {
+  //     return *this;
+  //   }
+  //
+  //   delete[] data;
+  //   if (other.data == nullptr) {
+  //     data = nullptr;
+  //   } else {
+  //     data = new char[strlen(other.data) + 1];
+  //     strcpy(data, other.data);
+  //   }
+  //   return *this;
+  // }
 
   void print() { cout << data << "\n"; }
   void printAddress() {
