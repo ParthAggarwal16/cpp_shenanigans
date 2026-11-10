@@ -33,6 +33,9 @@ public:
 
   // first attempt at writing copy assignment
   Buffer &operator=(const Buffer &other) {
+
+    // when we write b = a; c++ interprets it as b.operator = (a), so here,
+    // "other" is a and "this" is b
     if (this == &other) {
       return *this;
     }
