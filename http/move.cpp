@@ -31,24 +31,24 @@ public:
 
   // TODO: look back at this copy assignment and implement it again
 
-  // first attempt at writing copy assignment
-  Buffer &operator=(const Buffer &other) {
-
-    // when we write b = a; c++ interprets it as b.operator = (a), so here,
-    // "other" is a and "this" is b
-    if (this == &other) {
-      return *this;
-    }
-
-    delete[] data;
-    if (other.data == nullptr) {
-      data = nullptr;
-    } else {
-      data = new char[strlen(other.data) + 1];
-      strcpy(data, other.data);
-    };
-    return *this;
-  }
+  // // first attempt at writing copy assignment
+  // Buffer &operator=(const Buffer &other) {
+  //
+  //   // when we write b = a; c++ interprets it as b.operator = (a), so here,
+  //   // "other" is a and "this" is b
+  //   if (this == &other) {
+  //     return *this;
+  //   }
+  //
+  //   delete[] data;
+  //   if (other.data == nullptr) {
+  //     data = nullptr;
+  //   } else {
+  //     data = new char[strlen(other.data) + 1];
+  //     strcpy(data, other.data);
+  //   };
+  //   return *this;
+  // }
 
   void print() { cout << data << "\n"; }
   void printAddress() {
