@@ -29,6 +29,7 @@ public:
     std::cout << "move constructor";
   }
 
+  // copy assignment
   Buffer &operator=(const Buffer &source) {
     if (this == &source) { // we are basically checking whether we are assigbing
                            // an object to itself
@@ -41,6 +42,16 @@ public:
     } else {
       data = new char[strlen(source.data) + 1];
       strcpy(data, source.data);
+    }
+    return *this;
+  }
+
+  // move assignment
+  Buffer &operator=(Buffer &&sourceBuffer) {
+    if (this != &sourceBuffer) {
+      delete[] data;
+      data = sourceBuffer.data;
+      sourceBuffer.data = nullptr;
     }
     return *this;
   }
