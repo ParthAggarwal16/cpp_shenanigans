@@ -40,15 +40,16 @@ public:
       return *this;
     }
 
+    char *newData = nullptr;
+
+    if (other.data != nullptr) {
+      newData = new char[strlen(other.data) + 1];
+      strcpy(newData, other.data);
+    }
     delete[] data;
-    if (other.data == nullptr) {
-      data = nullptr;
-    } else {
-      data = new char[strlen(other.data) + 1];
-      strcpy(data, other.data);
-    };
+    data = newData;
     return *this;
-  }
+  };
 
   void print() { cout << data << "\n"; }
   void printAddress() {
