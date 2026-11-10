@@ -48,10 +48,15 @@ public:
 
   // move assignment
   Buffer &operator=(Buffer &&sourceBuffer) {
+
+    // is this address of the destination same as the one we are trying to
+    // steal resource from? if yes then do nothing
     if (this != &sourceBuffer) {
-      delete[] data;
-      data = sourceBuffer.data;
-      sourceBuffer.data = nullptr;
+      delete[] data; // release the memory currently owned by the object
+      data = sourceBuffer.data; // take ownership of source object's memory
+
+      sourceBuffer.data = nullptr; // leave the entire object in a valid and
+                                   // empty state so its harmless
     }
     return *this;
   }
