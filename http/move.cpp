@@ -29,8 +29,6 @@ public:
     std::cout << "move constructor";
   }
 
-  // TODO: look back at this copy assignment and implement it again
-
   Buffer &operator=(const Buffer &source) {
     if (this == &source) { // we are basically checking whether we are assigbing
                            // an object to itself
