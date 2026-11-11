@@ -78,29 +78,28 @@ Buffer createBuffer() { // this returns buffer by value
 
 int main() {
 
-  // Buffer a("hello");
-  // Buffer b("hello");
-  //
-  // std::cout << "before assignment";
-  // a.print();
-  // b.print();
-  //
-  // std::cout << "assigning a to b";
-  // b = a;
-  //
-  // std::cout << " after assignment";
-  // a.print();
-  // b.print();
-  //
-  // std::cout << "checking independent memory";
-  // a.printAddress();
-  // b.printAddress();
-  //
-  // std::cout << "testing self assignment";
-  // a = a;
-  //
-  // std::cout << "printing out everything final time";
-  // a.print();
-  // b.print();
+  Buffer a("hello");
+  Buffer b("hello");
 
+  std::cout << "before assignment" << endl;
+  a.print();
+  b.print();
+
+  std::cout << "assigning a to b" << endl;
+  b = a;
+
+  std::cout << " after assignment" << endl;
+  a.print();
+  b.print();
+
+  std::cout << "checking independent memory" << endl;
+  a.printAddress();
+  b.printAddress();
+
+  std::cout << "testing self assignment" << endl;
+  a = a;
+
+  std::cout << "printing out everything final time" << endl;
+  a.print();
+  b.print();
 };
