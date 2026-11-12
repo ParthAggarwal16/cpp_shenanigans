@@ -35,14 +35,17 @@ public:
                            // an object to itself
       return *this;
     }
+    char *newdata = nullptr; // allocating new one before releasing the old one
+
+    if (source.data != nullptr) {
+      newdata = new char[strlen(source.data) + 1];
+      strcpy(newdata, source.data); // fill the new one
+    }
+
     delete[] data; // now we release the memeory currently owned by the
                    // destination
-    if (source.data == nullptr) {
-      data = nullptr;
-    } else {
-      data = new char[strlen(source.data) + 1];
-      strcpy(data, source.data);
-    }
+
+    data = newdata; // point at the new one which is now the sole onwer of it
     return *this;
   }
 
