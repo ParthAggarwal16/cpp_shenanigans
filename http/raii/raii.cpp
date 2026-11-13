@@ -18,4 +18,12 @@ public:
       cout << "file opened";
     }
   }
+
+  ~File() {
+    if (file != nullptr) {
+      fclose(file);
+      cout << "file closed automatically, this is essentially raii, where the "
+              "destrcutor is resposible fot freeing this resource";
+    }
+  }
 };
