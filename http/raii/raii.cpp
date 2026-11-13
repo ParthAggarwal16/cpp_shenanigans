@@ -26,4 +26,10 @@ public:
               "destrcutor is resposible fot freeing this resource";
     }
   }
+
+  void write(const char *text) {
+    if (file != nullptr) {
+      fputs(text, file);
+    }
+  }
 };
