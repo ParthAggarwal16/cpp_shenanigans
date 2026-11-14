@@ -1,14 +1,10 @@
 #include <cstddef>
+#include <iostream>
+#include <memory>
 #include <stdio.h>
 using namespace std;
 
-void process() {
-  int *ptr = new int(42);
-
-  // some random process happens
-
-  return;
-  delete ptr;
+int main() {
+  std::unique_ptr<int> ptr = std::make_unique<int>(42);
+  std::cout << *ptr << '\n';
 }
-
-int main() { return 0; }
