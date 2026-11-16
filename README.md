@@ -1,1 +1,1 @@
-# a for fun repo in which i practice c++ fundamentals before moving forward with distributed systems and performance engineering..., prolly gonna start by writing my own server and profile and benchmark it, make flame graphs and stuff like that and then try and optimize it
+## a for fun repo in which i practice c++ fundamentals before moving forward with distributed systems and performance engineering..., prolly gonna start by writing my own server and profile and benchmark it, make flame graphs and stuff like that and then try and optimize it
