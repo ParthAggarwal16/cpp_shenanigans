@@ -1,13 +1,10 @@
+#include <cstddef>
 #include <iostream>
 #include <memory>
-#include <utility>
+#include <stdio.h>
+using namespace std;
 
 int main() {
-
-  std::unique_ptr<int> a = std::make_unique<int>(42);
-
-  std::unique_ptr<int> b = std::move(a);
-
-  std::cout << "a: " << (a ? "owns something" : "empty") << '\n';
-  std::cout << "b: " << *b << '\n';
+  std::unique_ptr<int> ptr = std::make_unique<int>(42);
+  std::cout << *ptr << '\n';
 }
