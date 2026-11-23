@@ -1,13 +1,11 @@
-#include <cstddef>
 #include <iostream>
 #include <memory>
-#include <stdio.h>
-using namespace std;
+#include <utility>
 
 int main() {
-  std::unique_ptr<int> ptr = std::make_unique<int>(42);
-  // we are initializing a smart pointer that holds an integer
-  // (for context..., something like int *ptr is a raw integer )
+  std::unique_ptr<int> a = std::make_unique<int>(42);
+  std::unique_ptr<int> b = std::move(a);
 
-  std::cout << *ptr << '\n';
+  std::cout << "a: " << (a ? "owns something" : "empty") << '\n';
+  std::cout << "b: " << *b << '\n';
 }
