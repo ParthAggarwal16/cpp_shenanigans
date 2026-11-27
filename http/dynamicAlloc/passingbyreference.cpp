@@ -9,4 +9,8 @@ int main() {
   number.reset();
   cout << number << endl;
   cout << &number << endl;
+  number.reset(new int(100));
+  cout << "new number after reset: " << number << endl;
+  cout << "new number pointer after reset: " << *number << endl;
+  cout << "new number reference after reset: " << &number << endl;
 }
